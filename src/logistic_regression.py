@@ -32,7 +32,6 @@ class LogisticRegression:
         Returns:
             None: The function updates the model weights in place.
         """
-        # TODO: Implement gradient-descent algorithm to optimize logistic regression weights
         num_samples, num_features = features.shape
 
         ext_features = torch.cat([features, torch.ones((num_samples, 1))], dim=1)
@@ -140,7 +139,6 @@ class LogisticRegression:
         epsilon = 1e-10  
         predictions = torch.clamp(predictions, epsilon, 1 - epsilon)  
 
-        # Fórmula de la entropía cruzada binaria
         ce_loss = -torch.mean(targets * torch.log(predictions) + (1 - targets) * torch.log(1 - predictions))
 
         return ce_loss
