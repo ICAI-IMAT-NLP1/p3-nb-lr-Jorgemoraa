@@ -78,7 +78,7 @@ class LogisticRegression:
         weights = self.weights[:-1]
         bias = self.weights[-1]
         logits = features @ weights + bias
-        probabilities: torch.Tensor = torch.sigmoid(logits)
+        probabilities: torch.Tensor = self.sigmoid(logits)
         
         return probabilities
 
